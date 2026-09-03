@@ -26,19 +26,13 @@
       </blockquote>
     </section>
 
-    <!-- Compact Capitalized Guess Input -->
+    <!-- 2 Separate Letter Input Slots -->
     <div class="guess-section">
-      <div class="input-wrapper">
-        <input 
-          type="text" 
-          id="userInput" 
-          placeholder="ENTER GUESS..." 
-          maxlength="20"
-          autocomplete="off"
-          autocapitalize="characters"
-        >
-        <button id="checkBtn" onclick="checkGuess()">CHECK</button>
+      <div class="letter-boxes">
+        <input type="text" id="letter1" class="letter-input" maxlength="1" autocomplete="off" autocapitalize="characters">
+        <input type="text" id="letter2" class="letter-input" maxlength="1" autocomplete="off" autocapitalize="characters">
       </div>
+      <button id="checkBtn" class="check-btn" onclick="checkGuess()">CHECK</button>
       <p id="feedback" class="feedback-msg"></p>
     </div>
 
@@ -46,7 +40,7 @@
     <div class="reveal-section">
       <button id="revealBtn" class="reveal-btn" onclick="toggleAnswer()">GIVE UP? REVEAL ANSWER</button>
       <div id="answerBox" class="answer-box hidden">
-        <span>ANSWER:</span> ARTIFICIAL INTELLIGENCE (AI)
+        <span>ANSWER:</span> AI
       </div>
     </div>
 
