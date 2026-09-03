@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pragati • Riddle Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="riddle-card">
+    <header class="card-header">
+      <div class="event-tag">PRAGATI QUEST</div>
+      <h1 class="riddle-title">The Identity Thief</h1>
+      <p class="subtitle">Can you unmask who—or what—I am?</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <section class="riddle-content">
+      <div class="ai-status">
+        <span class="ai-badge">AI Generating</span>
+      </div>
+      <blockquote class="riddle-text">
+        <span id="aiStream"></span><span class="ai-cursor">|</span>
+      </blockquote>
+    </section>
+
+    <!-- 2 Separate Letter Input Slots -->
+    <div class="guess-section">
+      <div class="letter-boxes">
+        <input type="text" id="letter1" class="letter-input" maxlength="1" autocomplete="off" autocapitalize="characters">
+        <input type="text" id="letter2" class="letter-input" maxlength="1" autocomplete="off" autocapitalize="characters">
+      </div>
+      <button id="checkBtn" class="check-btn" onclick="checkGuess()">CHECK</button>
+      <p id="feedback" class="feedback-msg"></p>
+    </div>
+
+    <!-- Give Up Section (No Answer Revealed) -->
+    <div class="reveal-section">
+      <button id="revealBtn" class="reveal-btn" onclick="toggleAnswer()">GIVE UP? REVEAL ANSWER</button>
+      <div id="answerBox" class="answer-box hidden">
+        <span>NOTE:</span> Sorry, better luck next time! 😉 Keep guessing!
+      </div>
+    </div>
+
+    <footer class="card-footer">
+      <p>Cracked it? Submit your response at the counter!</p>
+      <span class="team-name">TEAM PRAGATI</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
