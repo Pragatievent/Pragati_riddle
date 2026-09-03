@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at center, #240046, #0f001a);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 16px;
+}
+
+/* Card Container: Fully responsive on mobile and desktop */
+.riddle-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 
+              0 0 0 4px #ffd60a;
+  text-align: center;
+  position: relative;
+}
+
+.event-tag {
+  display: inline-block;
+  background: #ffd60a;
+  color: #240046;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(255, 214, 10, 0.35);
+  margin-bottom: 10px;
+}
+
+.riddle-title {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: #240046;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: #7b2cbf;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.divider {
+  height: 3px;
+  background: linear-gradient(to right, #ffd60a, #7b2cbf, #ffd60a);
+  margin: 16px auto;
+  border-radius: 3px;
+  width: 75%;
+}
+
+.ai-status {
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.ai-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7b2cbf;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.riddle-text {
+  font-family: 'Georgia', serif;
+  font-size: clamp(0.98rem, 3vw, 1.15rem);
+  line-height: 1.65;
+  color: #240046;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  background: #fbf5ff;
+  border-radius: 12px;
+  border-left: 5px solid #7b2cbf;
+  text-align: left;
+  min-height: 120px;
+}
+
+.ai-cursor {
+  font-weight: bold;
+  color: #7b2cbf;
+  font-style: normal;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Compact, Fixed-Length Input Area */
+.guess-section {
+  margin-bottom: 16px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.input-wrapper input {
+  width: 200px;
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: 2px solid #e0c3fc;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: #7b2cbf;
+}
+
+.input-wrapper button {
+  background: #ffd60a;
+  color: #240046;
+  font-weight: 800;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 214, 10, 0.3);
+  font-size: 0.85rem;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.input-wrapper button:hover {
+  background: #ffc300;
+}
+
+.input-wrapper button:active {
+  transform: scale(0.96);
+}
+
+.feedback-msg {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 8px;
+  min-height: 20px;
+  text-transform: uppercase;
+}
+
+.feedback-msg.correct {
+  color: #2b9348;
+}
+
+.feedback-msg.wrong {
+  color: #d90429;
+}
+
+/* Reveal Answer Button */
+.reveal-btn {
+  background: transparent;
+  color: #7b2cbf;
+  border: 2px solid #7b2cbf;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.reveal-btn:hover {
+  background: #7b2cbf;
+  color: #ffffff;
+}
+
+.answer-box {
+  margin: 12px auto 0 auto;
+  max-width: 360px;
+  font-size: 0.95rem;
+  color: #240046;
+  font-weight: bold;
+  background: #fff9db;
+  border: 2px dashed #ffd60a;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.answer-box span {
+  color: #7b2cbf;
+  font-size: 0.8rem;
+  margin-right: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.card-footer {
+  margin-top: 22px;
+  border-top: 1px solid #f0e6ff;
+  padding-top: 12px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.team-name {
+  display: block;
+  font-weight: 800;
+  color: #5a189a;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
